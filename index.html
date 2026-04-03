@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bright Associates – Trusted stationery wholesaler in Chennai supplying government companies and corporations. 35+ years experience. GST registered. Call +91 99403 95243." />
+  <meta name="keywords" content="stationery wholesaler Chennai, government stationery supplier Tamil Nadu, office supplies wholesale Chennai, Bright Associates Karasangal" />
+  <title>Bright Associates | Stationery Wholesaler – Chennai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0f2540;
+      --navy2: #1a3a5c;
+      --gold: #f0a500;
+      --gold-light: #ffc947;
+      --gold-pale: #fff8e6;
+      --cream: #faf8f3;
+      --white: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5a6a7a;
+      --light: #eef2f7;
+      --border: #dde4ec;
+      --green: #25d366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo {
+      width: 40px; height: 40px; background: var(--gold);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 16px; color: var(--navy); font-weight: 600;
+    }
+    .nav-title { color: #fff; font-size: 16px; font-weight: 500; }
+    .nav-sub { color: #7aaac8; font-size: 11px; margin-top: 1px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #9bbdd4; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--navy);
+      padding: 8px 18px; border-radius: 6px;
+      font-size: 13px; font-weight: 500; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 80px 5% 70px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -60px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(240,165,0,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -40px; left: 10%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(240,165,0,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner { max-width: 700px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(240,165,0,0.15); color: var(--gold);
+      border: 1px solid rgba(240,165,0,0.3);
+      padding: 6px 16px; border-radius: 30px; font-size: 12px;
+      margin-bottom: 20px; animation: fadeUp 0.6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      color: #fff; line-height: 1.2; margin-bottom: 16px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: #8ab4cc; font-size: 15px; max-width: 520px;
+      line-height: 1.8; margin-bottom: 32px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-btns {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .btn-primary {
+      background: var(--gold); color: var(--navy);
+      padding: 13px 26px; border-radius: 8px;
+      font-size: 14px; font-weight: 500; text-decoration: none;
+      transition: transform 0.15s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent; color: #fff;
+      padding: 12px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 500; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: border-color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: #fff; transform: translateY(-1px); }
+
+    /* ── STATS BAND ── */
+    .stats-band {
+      background: var(--gold);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      padding: 18px 10px; text-align: center;
+      border-right: 1px solid rgba(0,0,0,0.1);
+    }
+    .stat:last-child { border: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px; color: var(--navy); font-weight: 600;
+    }
+    .stat-lbl { font-size: 11px; color: #6a4400; margin-top: 2px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 64px 5%; }
+    .section-label {
+      font-size: 11px; color: var(--gold); letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 8px; font-weight: 500;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3vw, 34px); font-weight: 500;
+      color: var(--navy); margin-bottom: 10px; line-height: 1.3;
+    }
+    .section-sub { font-size: 14px; color: var(--muted); max-width: 520px; line-height: 1.7; }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 50px; align-items: center; margin-top: 40px; }
+    .about-left { position: relative; }
+    .about-card-main {
+      background: var(--navy);
+      border-radius: 16px; padding: 30px;
+      position: relative; overflow: hidden;
+    }
+    .about-card-main::before {
+      content: '';
+      position: absolute; top: -30px; right: -30px;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle, rgba(240,165,0,0.2), transparent);
+      border-radius: 50%;
+    }
+    .about-avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--gold); color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .about-name { color: #fff; font-size: 18px; font-weight: 500; margin-bottom: 4px; }
+    .about-role { color: var(--gold); font-size: 12px; margin-bottom: 14px; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .about-tag {
+      background: rgba(240,165,0,0.15); color: var(--gold);
+      border: 1px solid rgba(240,165,0,0.25);
+      font-size: 11px; padding: 4px 10px; border-radius: 20px;
+    }
+    .about-gst {
+      margin-top: 20px; background: rgba(255,255,255,0.07);
+      border-radius: 8px; padding: 12px 14px;
+    }
+    .about-gst-label { font-size: 10px; color: #5a8aaa; margin-bottom: 4px; }
+    .about-gst-num { font-size: 13px; color: #f0c060; letter-spacing: 1px; font-weight: 500; }
+    .about-right p { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
+    .about-right p strong { color: var(--navy); }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+    .highlight {
+      background: var(--light); border-radius: 10px; padding: 14px;
+      border-left: 3px solid var(--gold);
+    }
+    .highlight-num { font-size: 20px; font-weight: 500; color: var(--navy); }
+    .highlight-lbl { font-size: 12px; color: var(--muted); }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--cream); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px; margin-top: 40px;
+    }
+    .prod-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px 18px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+    }
+    .prod-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+    .prod-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      background: var(--navy); display: flex; align-items: center;
+      justify-content: center; font-size: 22px; margin: 0 auto 14px;
+    }
+    .prod-name { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+    .prod-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ── CLIENTS ── */
+    .clients { background: var(--white); }
+    .clients-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px; margin-top: 40px;
+    }
+    .client-card {
+      border: 1px solid var(--border); border-radius: 12px; padding: 20px;
+      display: flex; gap: 14px; align-items: flex-start;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .client-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .client-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--gold-pale); display: flex; align-items: center;
+      justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .client-name { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+    .client-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ── WHY ── */
+    .why { background: var(--navy); }
+    .why .section-title { color: #fff; }
+    .why .section-sub { color: #7aaac8; }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-top: 40px;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 22px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .why-card:hover { background: rgba(240,165,0,0.08); border-color: rgba(240,165,0,0.3); }
+    .why-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; color: var(--gold); font-weight: 600; margin-bottom: 10px;
+    }
+    .why-title { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 6px; }
+    .why-desc { font-size: 12px; color: #7aaac8; line-height: 1.6; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; margin-top: 40px; }
+    .contact-info { display: flex; flex-direction: column; gap: 16px; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px;
+    }
+    .contact-item-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--gold-pale); display: flex; align-items: center;
+      justify-content: center; font-size: 18px; flex-shrink: 0;
+    }
+    .contact-item-label { font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+    .contact-item-value { font-size: 14px; font-weight: 500; color: var(--navy); word-break: break-all; }
+    .contact-item-value a { color: var(--navy); text-decoration: none; }
+    .contact-item-value a:hover { color: var(--gold); }
+    .contact-cta {
+      background: var(--navy); border-radius: 16px; padding: 32px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .contact-cta-title { font-family: 'Playfair Display', serif; font-size: 22px; color: #fff; }
+    .contact-cta-sub { font-size: 13px; color: #7aaac8; line-height: 1.7; }
+    .cta-btns { display: flex; flex-direction: column; gap: 10px; }
+    .cta-call {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--gold); color: var(--navy);
+      padding: 13px 20px; border-radius: 8px;
+      font-size: 14px; font-weight: 500; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-call:hover { background: var(--gold-light); }
+    .cta-wa {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--green); color: #fff;
+      padding: 13px 20px; border-radius: 8px;
+      font-size: 14px; font-weight: 500; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-wa:hover { background: #20bc5a; }
+    .cta-email {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: rgba(255,255,255,0.08); color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 12px 20px; border-radius: 8px;
+      font-size: 13px; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-email:hover { background: rgba(255,255,255,0.13); }
+    .gst-strip {
+      background: rgba(240,165,0,0.12); border: 1px solid rgba(240,165,0,0.25);
+      border-radius: 8px; padding: 12px 16px; margin-top: 8px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .gst-label { font-size: 10px; color: #9abacc; }
+    .gst-value { font-size: 13px; color: var(--gold); font-weight: 500; letter-spacing: 0.5px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #07182a;
+      padding: 24px 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-left { color: #4a7a9a; font-size: 12px; }
+    .footer-left strong { color: #7aaac8; }
+    .footer-right { color: #4a7a9a; font-size: 11px; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .stats-band { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-bottom: 1px solid rgba(0,0,0,0.1); }
+      .about-highlights { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-brand" href="#">
+    <div class="nav-logo">BA</div>
+    <div>
+      <div class="nav-title">Bright Associates</div>
+      <div class="nav-sub">Stationery Wholesaler · Chennai</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="tel:+919940395243">📞 Call Now</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🏆 Government & Corporate Stationery Supplier</div>
+    <h1>Chennai's Trusted<br><span>Stationery Wholesaler</span><br>Since 1989</h1>
+    <p>Supplying quality stationery & office materials to government corporations, PSUs, and large organisations across Tamil Nadu. GST registered, fully compliant, and always reliable.</p>
+    <div class="hero-btns">
+      <a href="tel:+919940395243" class="btn-primary">📞 Call for Bulk Order</a>
+      <a href="#products" class="btn-secondary">View Products →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stat">
+    <div class="stat-num">35+</div>
+    <div class="stat-lbl">Years of Experience</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2017</div>
+    <div class="stat-lbl">Registered & Active</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">Govt.</div>
+    <div class="stat-lbl">Approved Supplier</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">GST ✓</div>
+    <div class="stat-lbl">Fully Compliant</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label">About Us</div>
+  <div class="section-title">Decades of Trust &<br>Industry Expertise</div>
+  <div class="section-sub">A family of commitment to quality stationery supply for government and corporate clients across Tamil Nadu.</div>
+  <div class="about-grid">
+    <div class="about-left">
+      <div class="about-card-main">
+        <div class="about-avatar">DB</div>
+        <div class="about-name">Durai Babu</div>
+        <div class="about-role">Director, Bright Associates</div>
+        <div class="about-tags">
+          <span class="about-tag">35+ yrs in stationery</span>
+          <span class="about-tag">Govt. procurement expert</span>
+          <span class="about-tag">Active since 2017</span>
+        </div>
+        <div class="about-gst">
+          <div class="about-gst-label">GST REGISTRATION NUMBER</div>
+          <div class="about-gst-num">33CLDPB7482B1ZJ</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-right">
+      <p>
+        <strong>Bright Associates</strong> is a Chennai-based stationery wholesaler specialising in supplying government companies and corporations. With over <strong>35 years of hands-on industry experience</strong>, our director Mr. Durai Babu brings unmatched expertise in government procurement, quality standards, and timely delivery.
+      </p>
+      <p>
+        Registered in <strong>2017</strong> and actively operating since, we are a fully GST-compliant business delivering stationery and office materials to Tamil Nadu's public sector and corporate offices. Our communication address is at <strong>Raghavacheri Street, Karasangal, Chennai – 600044</strong>.
+      </p>
+      <div class="about-highlights">
+        <div class="highlight">
+          <div class="highlight-num">35+</div>
+          <div class="highlight-lbl">Years experience</div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-num">2017</div>
+          <div class="highlight-lbl">Year registered</div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-num">600044</div>
+          <div class="highlight-lbl">Pin – Karasangal</div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-num">GST ✓</div>
+          <div class="highlight-lbl">Fully compliant</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-label">Our Products</div>
+  <div class="section-title">Quality Office &<br>Stationery Supplies</div>
+  <div class="section-sub">We wholesale a wide range of stationery and office materials suited for bulk government and corporate procurement.</div>
+  <div class="products-grid">
+    <div class="prod-card">
+      <div class="prod-icon">📄</div>
+      <div class="prod-name">Paper & Registers</div>
+      <div class="prod-desc">A4, A3 paper reams, ruled notebooks, office registers & pads</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🖊</div>
+      <div class="prod-name">Writing Instruments</div>
+      <div class="prod-desc">Ball pens, pencils, markers, highlighters & gel pens</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">📁</div>
+      <div class="prod-name">Files & Folders</div>
+      <div class="prod-desc">Office files, binders, document wallets & presentation folders</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🖨</div>
+      <div class="prod-name">Printer Supplies</div>
+      <div class="prod-desc">Ink cartridges, toner, printer paper & ribbons</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🗂</div>
+      <div class="prod-name">Office Accessories</div>
+      <div class="prod-desc">Staplers, punchers, scissors, clips, rulers & tape</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">📦</div>
+      <div class="prod-name">Packaging Materials</div>
+      <div class="prod-desc">Envelopes, packing tape, courier bags & sealing materials</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🖍</div>
+      <div class="prod-name">Art & Drawing</div>
+      <div class="prod-desc">Drawing sheets, colour pencils, sketch pens & crayons</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">📋</div>
+      <div class="prod-name">Notice Boards</div>
+      <div class="prod-desc">Pin boards, white boards, marker boards & accessories</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" id="clients">
+  <div class="section-label">Who We Serve</div>
+  <div class="section-title">Trusted by Government<br>& Corporate Clients</div>
+  <div class="section-sub">Our primary clients are government corporations, PSUs, and large organisations across Tamil Nadu requiring reliable bulk stationery supply.</div>
+  <div class="clients-grid">
+    <div class="client-card">
+      <div class="client-icon">🏛</div>
+      <div>
+        <div class="client-name">Government Corporations</div>
+        <div class="client-desc">Tamil Nadu state government departments, boards & corporations</div>
+      </div>
+    </div>
+    <div class="client-card">
+      <div class="client-icon">🏙</div>
+      <div>
+        <div class="client-name">Municipal Bodies</div>
+        <div class="client-desc">Chennai Corporation & municipal office stationery requirements</div>
+      </div>
+    </div>
+    <div class="client-card">
+      <div class="client-icon">🏢</div>
+      <div>
+        <div class="client-name">Public Sector Undertakings</div>
+        <div class="client-desc">Central & state PSU offices requiring regular bulk supply</div>
+      </div>
+    </div>
+    <div class="client-card">
+      <div class="client-icon">🤝</div>
+      <div>
+        <div class="client-name">Corporate Companies</div>
+        <div class="client-desc">Large offices and companies across Chennai & Tamil Nadu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="section-label" style="color: #f0c060;">Why Choose Us</div>
+  <div class="section-title">The Bright Associates<br>Advantage</div>
+  <div class="section-sub">What sets us apart from other stationery suppliers in Chennai.</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">35+</div>
+      <div class="why-title">Years of Expertise</div>
+      <div class="why-desc">Deep knowledge of government procurement standards, quality requirements and supplier protocols</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">GST</div>
+      <div class="why-title">Fully Compliant</div>
+      <div class="why-desc">GST registered business — proper tax invoicing for all government and corporate orders</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">📦</div>
+      <div class="why-title">Bulk Delivery</div>
+      <div class="why-desc">Reliable on-time delivery for large volume orders across Chennai and Tamil Nadu</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">₹</div>
+      <div class="why-title">Wholesale Pricing</div>
+      <div class="why-desc">Competitive wholesale rates designed for government tender and bulk procurement budgets</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">🤝</div>
+      <div class="why-title">Long-term Relationships</div>
+      <div class="why-desc">We build lasting supplier partnerships with government bodies, not just one-off transactions</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">📍</div>
+      <div class="why-title">Local Chennai Base</div>
+      <div class="why-desc">Based in Karasangal, Chennai — easy to visit, quick to coordinate, fast to deliver locally</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">Contact Us</div>
+  <div class="section-title">Get in Touch for<br>Bulk Orders & Quotations</div>
+  <div class="section-sub">Reach out for pricing, product availability, or to place a bulk order. We respond quickly.</div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-item-icon">👤</div>
+        <div>
+          <div class="contact-item-label">DIRECTOR</div>
+          <div class="contact-item-value">Durai Babu</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div>
+          <div class="contact-item-label">MOBILE NUMBER</div>
+          <div class="contact-item-value"><a href="tel:+919940395243">+91 99403 95243</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📧</div>
+        <div>
+          <div class="contact-item-label">EMAIL</div>
+          <div class="contact-item-value"><a href="mailto:d.babu10091957@gmail.com">d.babu10091957@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div>
+          <div class="contact-item-label">COMMUNICATION ADDRESS</div>
+          <div class="contact-item-value">Raghavacheri Street, Karasangal,<br>Chennai, Tamil Nadu – 600044</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">🕐</div>
+        <div>
+          <div class="contact-item-label">WORKING HOURS</div>
+          <div class="contact-item-value">Monday – Saturday, 9:00 AM – 6:00 PM</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-cta">
+      <div class="contact-cta-title">Ready to Order?</div>
+      <div class="contact-cta-sub">Contact us today for competitive wholesale pricing, product catalogue, and bulk quotations for your organisation.</div>
+      <div class="cta-btns">
+        <a class="cta-call" href="tel:+919940395243">📞 Call +91 99403 95243</a>
+        <a class="cta-wa" href="https://wa.me/919940395243?text=Hello%20Bright%20Associates%2C%20I%20need%20a%20quotation%20for%20stationery%20bulk%20order." target="_blank">💬 WhatsApp Us</a>
+        <a class="cta-email" href="mailto:d.babu10091957@gmail.com?subject=Stationery%20Bulk%20Order%20Enquiry">✉ Send Email</a>
+      </div>
+      <div class="gst-strip">
+        <div>
+          <div class="gst-label">GST REGISTRATION NUMBER</div>
+          <div class="gst-value">33CLDPB7482B1ZJ</div>
+        </div>
+        <div style="font-size:11px;color:#5a9aaa;">TN · Active</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    © 2025 <strong>Bright Associates</strong> · Stationery Wholesaler, Chennai · All rights reserved.
+  </div>
+  <div class="footer-right">
+    GST: 33CLDPB7482B1ZJ · Karasangal, Chennai – 600044
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    const cta = document.querySelector('.nav-cta');
+    if (links) {
+      const isOpen = links.style.display === 'flex';
+      links.style.cssText = isOpen ? '' : 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#0f2540;padding:16px 5%;gap:16px;z-index:99;';
+      if (cta) cta.style.display = isOpen ? '' : 'block';
+    }
+  }
+
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.prod-card, .client-card, .why-card, .highlight, .contact-item').forEach(el => {
+    el.style.cssText += 'opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
